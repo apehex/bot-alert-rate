@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.isort]
+profile = "black"
+src_paths = ["bot_alert_rate", "tests"]
+honor_noqa = true
+
+[tool.pytest.ini_options]
+addopts = "-p no:warnings --doctest-modules"
+doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
+minversion = "6.2"
+testpaths = [
+    "bot_alert_rate",
+    "tests",
+]
