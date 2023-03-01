@@ -30,7 +30,8 @@ def get_alert_count(bot_id: str, alert_id: str, chain_id: int) -> int:
     alert_id_counts = 1
     try:
         result = requests.get(alert_stats_url).json()
-        alert_id_counts = int(result["alertIds"][alert_id]["count"])
+        if alert_id in result["alertIds"]:
+            alert_id_counts = int(result["alertIds"][alert_id]["count"])
     except Exception as err:
         logging.warning(f"Error obtaining alert counts: {err}")
 
