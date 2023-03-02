@@ -27,7 +27,7 @@ ALERT_ID = "NEGATIVE-ANGER-TEXT-MESSAGE"
 
 if __name__ == "__main__":
     alert_rate = calculate_alert_rate(
-        CHAIN_ID, BOT_ID, ALERT_ID, ScanCountType.CONTRACT_CREATION_COUNT
+        CHAIN_ID, BOT_ID, ALERT_ID, ScanCountType.TX_WITH_INPUT_DATA_COUNT
     )
     print(alert_rate)
 ```
