@@ -1,3 +1,5 @@
+[![PyPI](https://img.shields.io/pypi/v/bot-alert-rate.svg)](https://pypi.org/project/bot-alert-rate)
+
 # bot-alert-rate
 Tool that calculators bot alert rate
 
