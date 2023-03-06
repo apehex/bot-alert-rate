@@ -1,6 +1,6 @@
 {
   "name": "bot-alert-rate",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Forta Bot Alert Rate Calculator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -44,6 +44,7 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "@isaacs/ttlcache": "^1.2.1"
+    "@isaacs/ttlcache": "^1.2.1",
+    "bot-alert-rate": "^0.0.3"
   }
 }

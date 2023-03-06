@@ -40,7 +40,7 @@ async function getAlertCount(botId: string, alertId: string, chainId: number): P
   return alertIdCounts;
 }
 
-const camelToSnakeCase = (str: string) => str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+const camelToSnakeCase = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase();
 
 async function getScanCounts(chainId: number): Promise<any> {
   /* Gets all scan counts for given chain via Zettablock. */
@@ -61,7 +61,7 @@ async function getScanCounts(chainId: number): Promise<any> {
   try {
     const response = await fetch(scanCountsUrl, { method: 'POST', body: JSON.stringify(payload), headers: headers });
     const data = await response.json();
-    scanCounts = data['records'][0];
+    scanCounts = data['data']['records'][0];
     scanCountsCache.set(chainId, scanCounts);
   } catch (err) {
     console.warn(`Error obtaining scan counts: ${err}`);
@@ -72,7 +72,7 @@ async function getScanCounts(chainId: number): Promise<any> {
 async function getScanCount(scanCountType: ScanCountType, chainId: number): Promise<number> {
   /* Gets scan count in the last 24 hours via Zettablock GraphQL API */
   const scanCounts = await getScanCounts(chainId);
-  const scanCountName = camelToSnakeCase(scanCountType.toString());
+  const scanCountName = camelToSnakeCase(ScanCountType[scanCountType]);
   const scanCount = parseInt(scanCounts[scanCountName] || 1.0, 10);
   return Math.max(scanCount, 1.0);
 }
