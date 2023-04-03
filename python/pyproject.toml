@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bot_alert_rate"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="Mariko Wakabayashi", email="mariko@openzeppelin.com" },
 ]
@@ -16,6 +16,10 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
 
 [project.urls]
 "Homepage" = "https://github.com/forta-network/bot-alert-rate"
