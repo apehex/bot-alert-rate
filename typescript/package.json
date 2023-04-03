@@ -31,6 +31,7 @@
   "homepage": "https://github.com/forta-network/bot-alert-rate/typescript",
   "devDependencies": {
     "@types/jest": "^26.0.22",
+    "@types/node-fetch": "^2.6.3",
     "@typescript-eslint/eslint-plugin": "5.54.0",
     "@typescript-eslint/parser": "5.52.0",
     "eslint": "8.35.0",
@@ -45,6 +46,6 @@
   ],
   "dependencies": {
     "@isaacs/ttlcache": "^1.2.1",
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^2.6.9"
   }
 }
