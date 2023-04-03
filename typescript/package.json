@@ -1,6 +1,6 @@
 {
   "name": "bot-alert-rate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Forta Bot Alert Rate Calculator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
