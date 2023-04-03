@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 import TTLCache from '@isaacs/ttlcache';
 
 import { chainIds, datasetIds, queryPayload } from './constants';
@@ -27,7 +28,7 @@ async function getAlertCount(botId: string, alertId: string, chainId: number): P
   }
   const statsApiUrl = `https://api.forta.network/stats/bot/${botId}/alerts?chainId=${chainId}`;
   const response = await fetch(statsApiUrl);
-  const data = await response.json();
+  const data: any = await response.json();
   let alertIdCounts = 1;
   if (alertId in data.alertIds) {
     try {
@@ -60,7 +61,7 @@ async function getScanCounts(chainId: number): Promise<any> {
   let scanCounts = {};
   try {
     const response = await fetch(scanCountsUrl, { method: 'POST', body: JSON.stringify(payload), headers: headers });
-    const data = await response.json();
+    const data: any = await response.json();
     scanCounts = data['data']['records'][0];
     scanCountsCache.set(chainId, scanCounts);
   } catch (err) {
