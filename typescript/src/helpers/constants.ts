@@ -5,10 +5,10 @@ interface DatasetIds {
 }
 
 export const datasetIds: DatasetIds = {
-  1: 'sq_786661e4d8b140cfb22f77cae19de1c5',
-  56: 'sq_14d40ded55034637868a1b857917f10b',
-  42161: 'sq_e0f899885862445995cb5286bdfd1b26',
-  137: 'sq_f4ef7e179b594f9ca66578f017b227f1',
+  1: 'sq_ca31089231ae46ec801d11089be275c8',
+  56: 'sq_c7a545425492482db2e9779c31e05d3f',
+  42161: 'sq_0047a17a957d47c1bfb9b9d64fc8b775',
+  137: 'sq_6cb93274f8af40eea38088d74ddda886',
   43114: 'Avalanche will be supported in Q2, 2023. Please use custom scan count type.',
   10: 'Optimism will be supported in Q2, 2023. Please use custom scan count type.',
   250: 'Fantom will be suppored in Q3, 2023. Please use custom scan count type.',
