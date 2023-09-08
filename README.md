@@ -6,7 +6,9 @@ Tool that calculators bot alert rate
 
 ## Requirements
 
-* Set `ZETTABLOCK_API_KEY` env variable. Contact Mariko to get this.
+Create a [Zettablock account](https://app.zettablock.com/auth/login) to get an API key and set the following env variable:
+
+* `ZETTABLOCK_API_KEY`
 
 ## Tutorials
 
