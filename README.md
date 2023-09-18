@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/bot-alert-rate.svg)](https://www.npmjs.com/package/bot-alert-rate)
 
 # bot-alert-rate
-Tool that calculators bot alert rate
+Tool that calculates bot alert rate. This package is used by most [Forta threat detection bots](https://github.com/forta-network/starter-kits/tree/main) to help identity anomalous alerts.
 
 ## Requirements
 
