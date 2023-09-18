@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/bot-alert-rate.svg)](https://www.npmjs.com/package/bot-alert-rate)
 
 # bot-alert-rate
-Tool that calculates bot alert rate. This package is used by most [Forta threat detection bots](https://github.com/forta-network/starter-kits/tree/main) to help identity anomalous alerts.
+Tool that calculates bot alert rate. Bot alert rate measures the rareness of a specific alert relative to the number of blockchain activity. For example, a bot alert rate can be `# of bot alerts / # of contract creations in the last 24 hours`. Most [Forta threat detection bots](https://github.com/forta-network/starter-kits/tree/main) and community bots use this package to help identity anomalous alerts.
 
 ## Requirements
 
