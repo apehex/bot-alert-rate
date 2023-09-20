@@ -14,11 +14,18 @@ Create a [Zettablock account](https://app.zettablock.com/auth/login) to get an A
 
 ### Python
 
+#### Install
+
 First install the package and run the python example
 ```bash
 $ pip install bot_alert_rate
 $ python example.py
 ```
+
+#### Using the Zetta API
+
+You can query the Zetta API to get the rate of a specific alert.
+To do so, call `calculate_alert_rate` with the specifics of the alert:
 
 ```python
 from bot_alert_rate import calculate_alert_rate, ScanCountType
@@ -36,6 +43,35 @@ if __name__ == "__main__":
     )
     print(alert_rate)
 ```
+
+#### Using a local history
+
+An alternative is to save a local history of the alerts in memory and use it to calculate the rates.
+The main motivation is to improve performance by avoiding web requests.
+
+To use it, just wrap `handle_block` / `handle_transaction` / `handle_alert` as follows:
+
+```python
+@alert_history(size=10000)
+def handle_block(log: BlockEvent) -> list:
+    pass
+
+@alert_history(size=10000)
+def handle_transaction(log: TransactionEvent) -> list:
+    pass
+
+@alert_history(size=10000)
+def handle_alert(log: AlertEvent) -> list:
+    pass
+```
+
+The decorator will automatically add the `anomaly_score` in the metadata of the `Finding` objects.
+It will use the field `alert_id` from the `Finding` objects to identify them.
+
+> make sure the history size is big enough to contain occurences of the bot alerts!
+
+For example, if your bot triggers `ALERT-1` every 2k transactions and `ALERT-2` every 10k on average:
+`@alert_history(size=100000)` would gather enough alerts to have a relevant estimation of the rate of both alerts.
 
 ### Typescript
 
